@@ -1,0 +1,36 @@
+{% extends "base.html" %} {%block title%}
+<title>Flask Boggle</title>{%endblock%} {%block links%}
+<link rel="stylesheet" href="/static/style.css" />
+{%endblock%} {%block content%}
+<h1>Boggle</h1>
+<h2 id="clock"></h2>
+<table id="boggle-board">
+	<caption hidden>
+		Boggle game display
+	</caption>
+	<thead hidden>
+		<th id="game-head">
+			<span>Game Board</span>
+		</th>
+	</thead>
+	<tbody>
+		{%for row in board%}
+		<tr>
+			{%for cell in row%}
+			<td class="letter-cell">{{cell}}</td>
+			{%endfor%}
+		</tr>
+		{%endfor%}
+	</tbody>
+</table>
+<div id="response-display"></div>
+<form id="game_form">
+	<input type="text" name="submission" id="submission" />
+	<button type="submit">submit</button>
+</form>
+<div>Score: <span id="score">0</span></div>
+{%endblock%} {%block scripts%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="/static/script.js"></script>
+{%endblock%}

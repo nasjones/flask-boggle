@@ -1,0 +1,24 @@
+* {
+	text-align: center;
+}
+
+#boggle-board {
+	margin: auto;
+}
+
+.letter-cell {
+	border: 2px solid salmon;
+	width: 10vh;
+}
+
+tr {
+	height: 10vh;
+}
+
+.success {
+	color: green;
+}
+
+.fail {
+	color: red;
+}
